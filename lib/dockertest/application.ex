@@ -5,9 +5,12 @@ defmodule Dockertest.Application do
 
   use Application
 
+  alias Dockertest.Worker
+
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      Worker
       # Starts a worker by calling: Dockertest.Worker.start_link(arg)
       # {Dockertest.Worker, arg},
     ]
